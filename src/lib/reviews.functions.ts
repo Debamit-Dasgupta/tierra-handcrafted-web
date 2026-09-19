@@ -27,45 +27,51 @@ export const getGoogleReviews = createServerFn({ method: "GET" }).handler(async 
   const empty: PlaceReviews = { rating: null, total: null, reviews: [] };
   if (!lovableKey || !mapsKey) return empty;
 
-  const response = await fetch(`${GATEWAY_URL}/places/v1/places/${PLACE_ID}`, {
-    headers: {
-      Authorization: `Bearer ${lovableKey}`,
-      "X-Connection-Api-Key": mapsKey,
-      "X-Goog-FieldMask": "rating,userRatingCount,reviews",
-    },
-  });
+  try {
+    const response = await fetch(`${GATEWAY_URL}/places/v1/places/${PLACE_ID}`, {
+      headers: {
+        Authorization: `Bearer ${lovableKey}`,
+        "X-Connection-Api-Key": mapsKey,
+        "X-Goog-FieldMask": "rating,userRatingCount,reviews",
+      },
+    });
 
-  if (!response.ok) {
-    console.error(`Google Places request failed [${response.status}]: ${await response.text()}`);
+    if (!response.ok) {
+      console.error(`Google Places request failed [${response.status}]: ${await response.text()}`);
+      return cache?.data ?? empty;
+    }
+
+    const body = (await response.json()) as {
+      rating?: number;
+      userRatingCount?: number;
+      reviews?: Array<{
+        rating?: number;
+        relativePublishTimeDescription?: string;
+        text?: { text?: string };
+        originalText?: { text?: string };
+        authorAttribution?: { displayName?: string };
+      }>;
+    };
+  };
+
+    const data: PlaceReviews = {
+      rating: body.rating ?? null,
+      total: body.userRatingCount ?? null,
+      reviews: (body.reviews ?? [])
+        .map((review) => ({
+          author: review.authorAttribution?.displayName ?? "Google reviewer",
+          rating: review.rating ?? 0,
+          text: (review.text?.text ?? review.originalText?.text ?? "").trim(),
+          relativeTime: review.relativePublishTimeDescription ?? "",
+        }))
+        .filter((review) => review.text.length > 0)
+        .slice(0, 5),
+    };
+
+    cache = { at: Date.now(), data };
+    return data;
+  } catch (error) {
+    console.error("Google Places request failed before a response was received", error);
     return cache?.data ?? empty;
   }
-
-  const body = (await response.json()) as {
-    rating?: number;
-    userRatingCount?: number;
-    reviews?: Array<{
-      rating?: number;
-      relativePublishTimeDescription?: string;
-      text?: { text?: string };
-      originalText?: { text?: string };
-      authorAttribution?: { displayName?: string };
-    }>;
-  };
-
-  const data: PlaceReviews = {
-    rating: body.rating ?? null,
-    total: body.userRatingCount ?? null,
-    reviews: (body.reviews ?? [])
-      .map((review) => ({
-        author: review.authorAttribution?.displayName ?? "Google reviewer",
-        rating: review.rating ?? 0,
-        text: (review.text?.text ?? review.originalText?.text ?? "").trim(),
-        relativeTime: review.relativePublishTimeDescription ?? "",
-      }))
-      .filter((review) => review.text.length > 0)
-      .slice(0, 5),
-  };
-
-  cache = { at: Date.now(), data };
-  return data;
 });

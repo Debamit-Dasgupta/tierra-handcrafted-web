@@ -61,7 +61,14 @@ export const Route = createFileRoute("/")({
       }),
     }],
   }),
-  loader: () => getGoogleReviews(),
+  loader: async () => {
+    try {
+      return await getGoogleReviews();
+    } catch (error) {
+      console.error("Unable to load Google reviews", error);
+      return { rating: null, total: null, reviews: [] };
+    }
+  },
   component: Index,
 });
 
@@ -86,9 +93,9 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 
 function Index() {
   const placeData = Route.useLoaderData();
-  const googleReviews = placeData.reviews;
-  const placeRating = placeData.rating;
-  const placeTotal = placeData.total;
+  const googleReviews = placeData?.reviews ?? [];
+  const placeRating = placeData?.rating ?? null;
+  const placeTotal = placeData?.total ?? null;
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
