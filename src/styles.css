@@ -194,7 +194,10 @@
 
 /* Hide the Lovable "Made with Lovable" badge without affecting layout. */
 .lovable-badge,
+#lovable-badge,
 [data-lovable-badge],
+[id*="lovable-badge"],
+[class*="lovable-badge"],
 a[href*="lovable.dev"][target="_blank"],
 iframe[src*="lovable"],
 body > div[class*="lovable"],
