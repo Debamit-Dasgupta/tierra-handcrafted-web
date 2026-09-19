@@ -2,10 +2,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { ArrowDown, ArrowRight, Instagram, MapPin, Menu, Phone, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/cafe-de-olla.jpg";
 import cherriesImage from "@/assets/coffee-cherries.jpg";
-import foodImage from "@/assets/cafe-food.jpg";
-import detailsImage from "@/assets/cafe-details.jpg";
+import interiorWideAsset from "@/assets/cafe-interior-wide.jpg.asset.json";
+import sandwichLatteAsset from "@/assets/cafe-sandwich-latte.jpg.asset.json";
+import counterAsset from "@/assets/cafe-counter.jpg.asset.json";
+import breakfastAsset from "@/assets/cafe-breakfast.jpg.asset.json";
+
+const interiorImage = interiorWideAsset.url;
+const sandwichLatteImage = sandwichLatteAsset.url;
+const counterImage = counterAsset.url;
+const breakfastImage = breakfastAsset.url;
 
 const address = "1144 N Vermont Ave, Los Angeles, CA 90029";
 const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}`;
