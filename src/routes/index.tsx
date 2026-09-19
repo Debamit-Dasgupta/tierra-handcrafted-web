@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { ArrowDown, ArrowRight, Instagram, MapPin, Menu, Phone, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { getGoogleReviews } from "@/lib/reviews.functions";
+
 import cherriesImage from "@/assets/coffee-cherries.jpg";
 import interiorWideAsset from "@/assets/cafe-interior-wide.jpg.asset.json";
 import sandwichLatteAsset from "@/assets/cafe-sandwich-latte.jpg.asset.json";
