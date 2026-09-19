@@ -11,6 +11,11 @@ import latteHeartAsset from "@/assets/cafe-latte-heart.jpg.asset.json";
 import clubSandwichAsset from "@/assets/cafe-club-sandwich.jpg.asset.json";
 import storefrontAsset from "@/assets/cafe-storefront.jpg.asset.json";
 import nutellaAsset from "@/assets/cafe-nutella-banana.jpg.asset.json";
+import windowSignAsset from "@/assets/cafe-window-sign.webp.asset.json";
+import counterWallAsset from "@/assets/cafe-counter-wall.webp.asset.json";
+import stickerLatteAsset from "@/assets/cafe-iced-latte-sticker.png.asset.json";
+import sleeveLatteAsset from "@/assets/cafe-iced-latte-sleeve.webp.asset.json";
+
 
 const interiorImage = interiorWideAsset.url;
 const sandwichLatteImage = sandwichLatteAsset.url;
