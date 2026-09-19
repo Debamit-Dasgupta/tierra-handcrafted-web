@@ -85,7 +85,12 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 }
 
 function Index() {
+  const placeData = Route.useLoaderData();
+  const googleReviews = placeData.reviews;
+  const placeRating = placeData.rating;
+  const placeTotal = placeData.total;
   const [menuOpen, setMenuOpen] = useState(false);
+
   useEffect(() => {
     const close = () => setMenuOpen(false);
     window.addEventListener("hashchange", close);
