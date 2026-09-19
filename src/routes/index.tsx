@@ -94,7 +94,7 @@ function Index() {
               <Button asChild variant="cafeOutline" size="lg"><a href="#visit">Visit us</a></Button>
             </div>
           </div>
-          <div className="absolute -bottom-3 right-4 w-32 rotate-[-7deg] opacity-80 sm:w-44"><CoffeeSketch /></div>
+          <div className="absolute -bottom-3 right-4 hidden w-44 rotate-[-7deg] opacity-80 sm:block"><CoffeeSketch /></div>
         </div>
         <figure className="relative min-h-0 overflow-hidden bg-ink">
           <img src={heroImage} alt="Ceramic cup of coffee on a worn timber café table" width={1600} height={1200} fetchPriority="high" className="h-full w-full object-cover" />
@@ -120,8 +120,8 @@ function Index() {
 
       <section className="px-5 py-20 md:px-10 md:py-28">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-          <figure className="relative"><img src={detailsImage} alt="Warm café interior with reclaimed timber tables" width={1408} height={1056} loading="lazy" className="h-full min-h-96 w-full object-cover" /><figcaption className="absolute bottom-3 left-3 bg-sunflower px-3 py-2 font-hand text-xl">made for taking your time</figcaption></figure>
-          <div className="flex flex-col justify-between border border-ink bg-terracotta p-7 text-plaster md:p-12"><div><Eyebrow>Made with intention</Eyebrow><h2 className="font-display text-5xl uppercase leading-[0.9] sm:text-6xl">Not everything<br />needs to match.</h2><p className="mt-7 max-w-md text-lg leading-relaxed">A neighborhood café built around good coffee, good food, and the simple pleasure of taking your time.</p></div><div className="mt-12 w-40 rotate-3"><CoffeeSketch light /></div></div>
+          <figure className="relative min-w-0"><img src={detailsImage} alt="Warm café interior with reclaimed timber tables" width={1408} height={1056} loading="lazy" className="h-full min-h-96 w-full object-cover" /><figcaption className="absolute bottom-3 left-3 bg-sunflower px-3 py-2 font-hand text-xl">made for taking your time</figcaption></figure>
+          <div className="flex min-w-0 flex-col justify-between border border-ink bg-terracotta p-7 text-plaster md:p-12"><div><Eyebrow>Made with intention</Eyebrow><h2 className="font-display text-[2.6rem] uppercase leading-[0.9] sm:text-6xl">Not everything<br />needs to match.</h2><p className="mt-7 max-w-md text-lg leading-relaxed">A neighborhood café built around good coffee, good food, and the simple pleasure of taking your time.</p></div><div className="mt-12 w-40 rotate-3"><CoffeeSketch light /></div></div>
         </div>
       </section>
 
