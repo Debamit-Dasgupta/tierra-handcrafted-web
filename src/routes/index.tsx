@@ -114,7 +114,7 @@ function Index() {
         <div className="mx-auto grid h-full max-w-[1500px] grid-cols-[minmax(0,1fr)_auto] items-center px-5 md:grid-cols-[1fr_auto_1fr] md:px-10">
           <a href="#home" className="min-w-0 font-display text-base uppercase leading-none sm:text-lg">De La Tierra Café</a>
           <nav aria-label="Primary navigation" className="hidden items-center gap-7 md:flex">
-            {navItems.map(([label, href]) => <a key={href} href={href} className="font-mono text-[11px] font-bold hover:text-terracotta">{label}</a>)}
+            {navItems.map(([label, href]) => <a key={href} href={href} className="font-mono text-[11px] font-bold hover:text-terracotta md:text-xs lg:text-sm">{label}</a>)}
           </nav>
           <div className="hidden justify-end md:flex"><Button asChild variant="cafe" size="sm"><a href="#menu">See menu</a></Button></div>
           <Button aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen} onClick={() => setMenuOpen((v) => !v)} variant="ghost" size="icon" className="md:hidden">
