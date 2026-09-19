@@ -7,11 +7,19 @@ import interiorWideAsset from "@/assets/cafe-interior-wide.jpg.asset.json";
 import sandwichLatteAsset from "@/assets/cafe-sandwich-latte.jpg.asset.json";
 import counterAsset from "@/assets/cafe-counter.jpg.asset.json";
 import breakfastAsset from "@/assets/cafe-breakfast.jpg.asset.json";
+import latteHeartAsset from "@/assets/cafe-latte-heart.jpg.asset.json";
+import clubSandwichAsset from "@/assets/cafe-club-sandwich.jpg.asset.json";
+import storefrontAsset from "@/assets/cafe-storefront.jpg.asset.json";
+import nutellaAsset from "@/assets/cafe-nutella-banana.jpg.asset.json";
 
 const interiorImage = interiorWideAsset.url;
 const sandwichLatteImage = sandwichLatteAsset.url;
 const counterImage = counterAsset.url;
 const breakfastImage = breakfastAsset.url;
+const latteHeartImage = latteHeartAsset.url;
+const clubSandwichImage = clubSandwichAsset.url;
+const storefrontImage = storefrontAsset.url;
+const nutellaImage = nutellaAsset.url;
 
 const address = "1144 N Vermont Ave, Los Angeles, CA 90029";
 const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}`;
