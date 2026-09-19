@@ -17,6 +17,8 @@ import windowSignAsset from "@/assets/cafe-window-sign.webp.asset.json";
 import counterWallAsset from "@/assets/cafe-counter-wall.webp.asset.json";
 import stickerLatteAsset from "@/assets/cafe-iced-latte-sticker.png.asset.json";
 import sleeveLatteAsset from "@/assets/cafe-iced-latte-sleeve.webp.asset.json";
+import patioBreakfastAsset from "@/assets/cafe-patio-breakfast.jpg.asset.json";
+import nutellaCounterAsset from "@/assets/cafe-nutella-counter.jpg.asset.json";
 
 
 const interiorImage = interiorWideAsset.url;
@@ -145,7 +147,7 @@ function Index() {
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div><Eyebrow>De La Tierra</Eyebrow><h2 className="font-display text-5xl uppercase leading-[0.9] sm:text-7xl">Coffee has a story<br />before it reaches<br /><span className="text-terracotta">your cup.</span></h2></div>
           <div className="grid grid-cols-2 gap-3">
-            <figure className="border border-ink p-2"><img src={cherriesImage} alt="Ripe coffee cherries on a coffee plant" width={1408} height={1056} loading="lazy" className="aspect-square w-full object-cover" /><figcaption className="pt-2 font-mono text-[10px] uppercase">Coffee / Origin</figcaption></figure>
+            <figure className="border border-ink p-2"><img src={windowSignImage} alt="Hands holding coffee beans in the café window beneath the De La Tierra Café sign" width={1080} height={1440} loading="lazy" className="aspect-square w-full object-cover" /><figcaption className="pt-2 font-mono text-[10px] uppercase">Coffee / By hand</figcaption></figure>
             <figure className="mt-10 border border-ink p-2"><img src={counterImage} alt="The café counter with pastry case, pottery and a snake plant" width={1080} height={1440} loading="lazy" className="aspect-square w-full object-cover" /><figcaption className="pt-2 font-mono text-[10px] uppercase">Space / Craft</figcaption></figure>
           </div>
         </div>
@@ -153,7 +155,7 @@ function Index() {
 
       <section className="bg-pine px-5 py-20 wood-grain md:px-10 md:py-28">
         <div className="mx-auto max-w-7xl"><Eyebrow>Where coffee begins</Eyebrow><div className="grid gap-10 lg:grid-cols-2"><h2 className="font-display text-5xl uppercase leading-[0.9] sm:text-7xl">Before the cup,<br />there are hands.</h2><p className="max-w-xl text-lg leading-relaxed">Every cup begins long before it reaches the café. We keep that work in view: the land, the harvest, the hands, and the coffee itself.</p></div>
-          <div className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-4">{["THE FARM", "THE HARVEST", "THE COFFEE", "THE LAND"].map((label, index) => <figure key={label} className="border border-ink bg-plaster p-2"><img src={cherriesImage} alt={index === 0 ? "Coffee plants growing on farmland" : "Ripe coffee cherries on branches"} width={1408} height={1056} loading="lazy" className={`aspect-square w-full object-cover ${index === 1 ? "object-right" : index === 2 ? "object-left" : ""}`} /><figcaption className="pt-2 font-mono text-[10px]">0{index + 1} / {label}</figcaption></figure>)}</div>
+          <figure className="mt-12 border border-ink bg-plaster p-2"><img src={cherriesImage} alt="Ripe coffee cherries on a coffee plant" width={1408} height={1056} loading="lazy" className="aspect-[16/7] w-full object-cover" /><figcaption className="pt-2 font-mono text-[10px] uppercase">The land / The harvest / The coffee</figcaption></figure>
         </div>
       </section>
 
@@ -228,14 +230,7 @@ function Index() {
           </div>
           <Button asChild variant="cafeLight" size="lg"><a href={instagramUrl} target="_blank" rel="noreferrer"><Instagram /> Follow along</a></Button>
         </div>
-        <div className="mx-auto mt-12 grid max-w-7xl grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-6">
-          {[[latteHeartImage, "COFFEE"], [breakfastImage, "BREAKFAST"], [stickerLatteImage, "ICED"], [nutellaImage, "SWEET"], [counterWallImage, "THE SPACE"], [storefrontImage, "OUTSIDE"]].map(([src, label]) => (
-            <a key={label} href={instagramUrl} target="_blank" rel="noreferrer" className="border border-plaster/40 p-2 hover:border-sunflower">
-              <img src={src} alt={`${(label as string).toLowerCase()} at De La Tierra Café`} width={1080} height={1080} loading="lazy" className="aspect-square w-full object-cover" />
-              <span className="mt-2 block font-mono text-[10px] uppercase">{label}</span>
-            </a>
-          ))}
-        </div>
+        <div aria-hidden="true" className="mx-auto mt-12 h-px max-w-7xl bg-plaster/30" />
       </section>
 
 
