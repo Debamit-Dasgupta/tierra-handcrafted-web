@@ -33,6 +33,8 @@ const windowSignImage = windowSignAsset.url;
 const counterWallImage = counterWallAsset.url;
 const stickerLatteImage = stickerLatteAsset.url;
 const sleeveLatteImage = sleeveLatteAsset.url;
+const patioBreakfastImage = patioBreakfastAsset.url;
+const nutellaCounterImage = nutellaCounterAsset.url;
 
 const address = "1144 N Vermont Ave, Los Angeles, CA 90029";
 const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}`;
