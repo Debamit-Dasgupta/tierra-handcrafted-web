@@ -180,7 +180,48 @@ function Index() {
 
       <section className="px-5 py-20 md:px-10 md:py-28"><div className="mx-auto max-w-7xl"><Eyebrow>Inside De La Tierra</Eyebrow><h2 className="font-display text-5xl uppercase leading-[0.9] sm:text-7xl">The little<br />details matter.</h2><div className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-4">{([[stickerLatteImage,"ICED LATTE"],[interiorImage,"SPACE"],[breakfastImage,"FOOD"],[windowSignImage,"THE WINDOW"],[clubSandwichImage,"KITCHEN"],[sandwichLatteImage,"TABLE"],[latteHeartImage,"COFFEE"],[counterWallImage,"THE COUNTER"],[nutellaImage,"SWEET"],[sleeveLatteImage,"TO GO"],[counterImage,"DETAILS"],[storefrontImage,"OUTSIDE"]] as const).map(([src,label], index) => <figure key={label} className="border border-ink p-2"><img src={src} alt={`${label.toLowerCase()} at De La Tierra Café`} width={1080} height={1080} loading="lazy" className="aspect-square w-full object-cover" /><figcaption className="pt-2 font-mono text-[10px]">{String(index + 1).padStart(2, "0")} / {label}</figcaption></figure>)}</div></div></section>
 
-      <section className="border-y border-ink bg-sunflower px-5 py-16 md:px-10"><div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[auto_1fr] md:items-center"><div><span className="font-display text-8xl leading-none">4.8</span><p className="font-mono text-xs font-bold">220 REVIEWS</p></div><div><Eyebrow>Customers talk about</Eyebrow><div className="flex flex-wrap gap-x-5 gap-y-2 font-display text-2xl uppercase sm:text-4xl"><span>Delicious coffee</span><span>·</span><span>Warm atmosphere</span><span>·</span><span>Fresh food</span><span>·</span><span>Friendly service</span></div></div></div></section>
+      <section className="border-y border-ink bg-sunflower px-5 py-16 md:px-10"><div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[auto_1fr] md:items-center"><div><span className="font-display text-8xl leading-none">{placeRating ?? "4.8"}</span><p className="font-mono text-xs font-bold">{(placeTotal ?? 220).toLocaleString("en-US")} REVIEWS</p></div><div><Eyebrow>Customers talk about</Eyebrow><div className="flex flex-wrap gap-x-5 gap-y-2 font-display text-2xl uppercase sm:text-4xl"><span>Delicious coffee</span><span>·</span><span>Warm atmosphere</span><span>·</span><span>Fresh food</span><span>·</span><span>Friendly service</span></div></div></div></section>
+
+      {googleReviews.length > 0 && (
+        <section id="reviews" className="scroll-mt-[72px] px-5 py-20 md:px-10 md:py-28">
+          <div className="mx-auto max-w-7xl">
+            <Eyebrow>From Google</Eyebrow>
+            <h2 className="font-display text-5xl uppercase leading-[0.9] sm:text-7xl">What people<br />are saying.</h2>
+            <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {googleReviews.map((review, index) => (
+                <blockquote key={`${review.author}-${index}`} className="flex flex-col justify-between border border-ink bg-plaster p-6">
+                  <p className="leading-relaxed">“{review.text.length > 280 ? `${review.text.slice(0, 280).trimEnd()}…` : review.text}”</p>
+                  <footer className="mt-6 border-t border-ink/30 pt-4 font-mono text-[10px] uppercase">
+                    <span className="font-bold">{review.author}</span>
+                    <span className="block text-ink/70">{review.rating} / 5 {review.relativeTime ? `· ${review.relativeTime}` : ""} · Google</span>
+                  </footer>
+                </blockquote>
+              ))}
+            </div>
+            <p className="mt-6 font-mono text-[10px] uppercase text-ink/70">Reviews from Google · updated automatically</p>
+          </div>
+        </section>
+      )}
+
+      <section id="instagram" className="scroll-mt-[72px] border-y border-ink bg-ink px-5 py-20 text-plaster md:px-10 md:py-28">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
+          <div>
+            <Eyebrow>On Instagram</Eyebrow>
+            <h2 className="font-display text-5xl uppercase leading-[0.9] sm:text-7xl">See what’s<br /><span className="text-sunflower">on the counter today.</span></h2>
+            <p className="mt-6 font-hand text-3xl text-pine">@delatierracafeorganic</p>
+          </div>
+          <Button asChild variant="cafeLight" size="lg"><a href={instagramUrl} target="_blank" rel="noreferrer"><Instagram /> Follow along</a></Button>
+        </div>
+        <div className="mx-auto mt-12 grid max-w-7xl grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-6">
+          {[[latteHeartImage, "COFFEE"], [breakfastImage, "BREAKFAST"], [stickerLatteImage, "ICED"], [nutellaImage, "SWEET"], [counterWallImage, "THE SPACE"], [storefrontImage, "OUTSIDE"]].map(([src, label]) => (
+            <a key={label} href={instagramUrl} target="_blank" rel="noreferrer" className="border border-plaster/40 p-2 hover:border-sunflower">
+              <img src={src} alt={`${(label as string).toLowerCase()} at De La Tierra Café`} width={1080} height={1080} loading="lazy" className="aspect-square w-full object-cover" />
+              <span className="mt-2 block font-mono text-[10px] uppercase">{label}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
 
       <section id="visit" className="scroll-mt-[72px] px-5 py-20 md:px-10 md:py-28"><div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.8fr_1.2fr]"><div><Eyebrow>Come by</Eyebrow><h2 className="font-display text-6xl uppercase leading-[0.88] sm:text-8xl">See you<br />at the café.</h2><p className="mt-7 font-hand text-3xl text-terracotta">Los Angeles, California</p></div><div className="border border-ink"><img src={storefrontImage} alt="De La Tierra Café storefront on N Vermont Ave with sidewalk seating and an orange umbrella" width={1440} height={1920} loading="lazy" className="aspect-[16/10] w-full border-b border-ink object-cover" /><div className="bg-leaf p-7 text-plaster md:p-10"><p className="font-display text-2xl uppercase">De La Tierra Café</p><address className="mt-5 not-italic leading-relaxed">1144 N Vermont Ave<br />Los Angeles, CA 90029<br />United States</address><a href="tel:+13235226501" className="mt-4 inline-block font-mono text-sm underline">+1 323-522-6501</a></div><div className="grid sm:grid-cols-3"><Button asChild variant="cafeOutline" size="lg" className="h-14 border-0 border-b sm:border-b-0 sm:border-r"><a href={directionsUrl} target="_blank" rel="noreferrer"><MapPin /> Directions</a></Button><Button asChild variant="cafeOutline" size="lg" className="h-14 border-0 border-b sm:border-b-0 sm:border-r"><a href="tel:+13235226501"><Phone /> Call</a></Button><Button asChild variant="cafeOutline" size="lg" className="h-14 border-0"><a href={instagramUrl} target="_blank" rel="noreferrer"><Instagram /> Instagram</a></Button></div></div></div></section>
 
