@@ -59,8 +59,10 @@ export const Route = createFileRoute("/")({
       }),
     }],
   }),
+  loader: () => getGoogleReviews(),
   component: Index,
 });
+
 
 const navItems = [
   ["HOME", "#home"], ["OUR STORY", "#story"], ["MENU", "#menu"], ["CAFÉ", "#cafe"], ["VISIT", "#visit"],
