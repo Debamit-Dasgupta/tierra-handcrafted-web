@@ -83,13 +83,13 @@ function Index() {
         </nav>}
       </header>
 
-      <section className="grid min-h-[calc(100svh-72px)] grid-rows-[minmax(0,1fr)_minmax(0,1.08fr)] border-b border-ink lg:grid-cols-[0.82fr_1.18fr] lg:grid-rows-1">
-        <div className="relative flex min-h-0 flex-col justify-center overflow-hidden bg-pine px-6 py-8 wood-grain sm:px-10 lg:px-[7vw]">
+      <section className="grid h-[calc(100svh-72px)] grid-rows-[minmax(0,1.18fr)_minmax(0,0.82fr)] border-b border-ink md:grid-cols-[0.9fr_1.1fr] md:grid-rows-1">
+        <div className="relative flex min-h-0 flex-col justify-center overflow-hidden bg-pine px-6 py-5 wood-grain sm:px-10 md:px-8 lg:px-[7vw]">
           <div className="relative z-10 max-w-2xl">
             <Eyebrow>De La Tierra Café · Los Angeles</Eyebrow>
-            <h1 className="font-display text-[clamp(3.25rem,7.5vw,7.6rem)] uppercase leading-[0.84]">From the land.<br />By hand.</h1>
-            <p className="mt-5 max-w-lg text-sm leading-relaxed sm:text-lg">Coffee, food, and a warm neighborhood space rooted in craft, community, and the people behind every cup.</p>
-            <div className="mt-6 flex flex-wrap gap-3">
+            <h1 className="font-display text-[clamp(2.7rem,7.5vw,7.6rem)] uppercase leading-[0.84]">From the land.<br />By hand.</h1>
+            <p className="mt-4 max-w-lg text-sm leading-relaxed sm:mt-5 sm:text-lg md:text-sm lg:text-lg">Coffee, food, and a warm neighborhood space rooted in craft, community, and the people behind every cup.</p>
+            <div className="mt-4 flex flex-wrap gap-3 sm:mt-6">
               <Button asChild variant="cafe" size="lg"><a href="#menu">See the menu <ArrowDown /></a></Button>
               <Button asChild variant="cafeOutline" size="lg"><a href="#visit">Visit us</a></Button>
             </div>
