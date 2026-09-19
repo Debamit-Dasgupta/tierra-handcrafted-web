@@ -153,7 +153,20 @@ function Index() {
           <div><Eyebrow>The coffee</Eyebrow><h2 className="font-display text-6xl uppercase leading-[0.88] sm:text-8xl">Start with<br />the cup.</h2><p className="mt-6 max-w-sm leading-relaxed">Four café favorites, printed simply. Ask at the counter for today’s full menu.</p></div>
           <div className="border-y-2 border-ink bg-pine p-6 wood-grain md:p-10">{["TRES LECHES LATTE", "CAFÉ DE OLLA", "LATTE", "COLD BREW COFFEE"].map((item, i) => <div key={item} className="grid grid-cols-[auto_1fr] items-end gap-3 border-b border-ink/45 py-5 last:border-0"><span className="font-display text-2xl uppercase sm:text-4xl">{item}</span><span className="mb-2 border-b border-dashed border-ink/50" /><span className="col-span-2 font-mono text-[10px] uppercase">0{i + 1} / Coffee</span></div>)}</div>
         </div>
+        <div className="mx-auto mt-14 max-w-7xl border border-ink bg-plaster p-6 md:p-8">
+          <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
+            <div>
+              <Eyebrow>Questions about the menu?</Eyebrow>
+              <p className="mt-3 max-w-xl font-display text-2xl uppercase leading-tight sm:text-3xl">Ask us about today’s drinks, pastries and kitchen plates.</p>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2 md:w-auto">
+              <Button asChild variant="cafe" size="lg"><a href="tel:+13235226501"><Phone /> Ask for more</a></Button>
+              <Button asChild variant="cafeOutline" size="lg"><a href={instagramUrl} target="_blank" rel="noreferrer"><Instagram /> Message us</a></Button>
+            </div>
+          </div>
+        </div>
       </section>
+
 
       <div aria-hidden="true" className="h-8 checker-strip" />
 
