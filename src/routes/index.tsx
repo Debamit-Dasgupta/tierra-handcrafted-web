@@ -8,20 +8,20 @@ import cherriesImage from "@/assets/coffee-cherries.jpg";
 // Images live in public/images so they deploy with the site on any host.
 
 
-const interiorImage = interiorWideAsset.url;
-const sandwichLatteImage = sandwichLatteAsset.url;
-const counterImage = counterAsset.url;
-const breakfastImage = breakfastAsset.url;
-const latteHeartImage = latteHeartAsset.url;
-const clubSandwichImage = clubSandwichAsset.url;
-const storefrontImage = storefrontAsset.url;
-const nutellaImage = nutellaAsset.url;
-const windowSignImage = windowSignAsset.url;
-const counterWallImage = counterWallAsset.url;
-const stickerLatteImage = stickerLatteAsset.url;
-const sleeveLatteImage = sleeveLatteAsset.url;
-const patioBreakfastImage = patioBreakfastAsset.url;
-const nutellaCounterImage = nutellaCounterAsset.url;
+const interiorImage = "/images/cafe-interior-wide.jpg";
+const sandwichLatteImage = "/images/cafe-sandwich-latte.jpg";
+const counterImage = "/images/cafe-counter.jpg";
+const breakfastImage = "/images/cafe-breakfast.jpg";
+const latteHeartImage = "/images/cafe-latte-heart.jpg";
+const clubSandwichImage = "/images/cafe-club-sandwich.jpg";
+const storefrontImage = "/images/cafe-storefront.jpg";
+const nutellaImage = "/images/cafe-nutella-banana.jpg";
+const windowSignImage = "/images/cafe-window-sign.webp";
+const counterWallImage = "/images/cafe-counter-wall.webp";
+const stickerLatteImage = "/images/cafe-iced-latte-sticker.png";
+const sleeveLatteImage = "/images/cafe-iced-latte-sleeve.webp";
+const patioBreakfastImage = "/images/cafe-patio-breakfast.jpg";
+const nutellaCounterImage = "/images/cafe-nutella-counter.jpg";
 
 const address = "1144 N Vermont Ave, Los Angeles, CA 90029";
 const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}`;
