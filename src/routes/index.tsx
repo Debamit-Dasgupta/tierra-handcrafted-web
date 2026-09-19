@@ -5,36 +5,23 @@ import { Button } from "@/components/ui/button";
 import { getGoogleReviews } from "@/lib/reviews.functions";
 
 import cherriesImage from "@/assets/coffee-cherries.jpg";
-import interiorWideAsset from "@/assets/cafe-interior-wide.jpg.asset.json";
-import sandwichLatteAsset from "@/assets/cafe-sandwich-latte.jpg.asset.json";
-import counterAsset from "@/assets/cafe-counter.jpg.asset.json";
-import breakfastAsset from "@/assets/cafe-breakfast.jpg.asset.json";
-import latteHeartAsset from "@/assets/cafe-latte-heart.jpg.asset.json";
-import clubSandwichAsset from "@/assets/cafe-club-sandwich.jpg.asset.json";
-import storefrontAsset from "@/assets/cafe-storefront.jpg.asset.json";
-import nutellaAsset from "@/assets/cafe-nutella-banana.jpg.asset.json";
-import windowSignAsset from "@/assets/cafe-window-sign.webp.asset.json";
-import counterWallAsset from "@/assets/cafe-counter-wall.webp.asset.json";
-import stickerLatteAsset from "@/assets/cafe-iced-latte-sticker.png.asset.json";
-import sleeveLatteAsset from "@/assets/cafe-iced-latte-sleeve.webp.asset.json";
-import patioBreakfastAsset from "@/assets/cafe-patio-breakfast.jpg.asset.json";
-import nutellaCounterAsset from "@/assets/cafe-nutella-counter.jpg.asset.json";
+// Images live in public/images so they deploy with the site on any host.
 
 
-const interiorImage = interiorWideAsset.url;
-const sandwichLatteImage = sandwichLatteAsset.url;
-const counterImage = counterAsset.url;
-const breakfastImage = breakfastAsset.url;
-const latteHeartImage = latteHeartAsset.url;
-const clubSandwichImage = clubSandwichAsset.url;
-const storefrontImage = storefrontAsset.url;
-const nutellaImage = nutellaAsset.url;
-const windowSignImage = windowSignAsset.url;
-const counterWallImage = counterWallAsset.url;
-const stickerLatteImage = stickerLatteAsset.url;
-const sleeveLatteImage = sleeveLatteAsset.url;
-const patioBreakfastImage = patioBreakfastAsset.url;
-const nutellaCounterImage = nutellaCounterAsset.url;
+const interiorImage = "/images/cafe-interior-wide.jpg";
+const sandwichLatteImage = "/images/cafe-sandwich-latte.jpg";
+const counterImage = "/images/cafe-counter.jpg";
+const breakfastImage = "/images/cafe-breakfast.jpg";
+const latteHeartImage = "/images/cafe-latte-heart.jpg";
+const clubSandwichImage = "/images/cafe-club-sandwich.jpg";
+const storefrontImage = "/images/cafe-storefront.jpg";
+const nutellaImage = "/images/cafe-nutella-banana.jpg";
+const windowSignImage = "/images/cafe-window-sign.webp";
+const counterWallImage = "/images/cafe-counter-wall.webp";
+const stickerLatteImage = "/images/cafe-iced-latte-sticker.png";
+const sleeveLatteImage = "/images/cafe-iced-latte-sleeve.webp";
+const patioBreakfastImage = "/images/cafe-patio-breakfast.jpg";
+const nutellaCounterImage = "/images/cafe-nutella-counter.jpg";
 
 const address = "1144 N Vermont Ave, Los Angeles, CA 90029";
 const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}`;
@@ -194,7 +181,7 @@ function Index() {
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center"><figure className="border border-plaster/40 p-2"><img src={stickerLatteImage} alt="Iced latte with the De La Tierra Café sticker on the cup, hand-painted café sign behind" width={1500} height={2000} loading="lazy" className="aspect-[4/3] w-full object-cover" /></figure><div><Eyebrow>Featured cup</Eyebrow><h2 className="font-display text-5xl uppercase leading-[0.9] sm:text-7xl">A little sweet.<br /><span className="text-sunflower">A lot of character.</span></h2><p className="mt-8 font-display text-2xl uppercase">Tres Leches Latte / Café de Olla</p><p className="mt-3 font-hand text-3xl text-pine">De La Tierra</p></div></div>
       </section>
 
-      <section className="px-5 py-20 md:px-10 md:py-28"><div className="mx-auto max-w-7xl"><Eyebrow>From the kitchen</Eyebrow><div className="grid gap-8 lg:grid-cols-2"><h2 className="font-display text-5xl uppercase leading-[0.9] sm:text-7xl">Coffee needs<br />something good<br />beside it.</h2><div className="border-l border-ink pl-6 font-mono text-sm uppercase leading-loose"><p>Breakfast sandwiches</p><p>Pastries / Concha</p><p>Avocado toast</p><p>Nutella & banana croissant</p><p>Banana and PB toast</p><p>Bagel sandwich</p></div></div><figure className="relative mt-12"><img src="/__l5e/assets-v1/36e6473b-3fc2-4b87-a381-6fb28032a7b0/cafe-breakfast.jpg" alt="Breakfast sandwiches, a ham and egg croissant and iced coffees on checkered paper" width="1440" height="1920" loading="lazy" className="relative aspect-[16/8] w-full object-cover" /><figcaption className="relative mt-6 font-mono text-[10px] uppercase">Breakfast / Pastries / Something good beside it</figcaption></figure><div className="mt-6 grid gap-6 sm:grid-cols-2"><figure><img src={clubSandwichImage} alt="Toasted sandwich with lettuce and tomato served on checkered paper" width={1440} height={1920} loading="lazy" className="aspect-[4/3] w-full border border-ink object-cover" /><figcaption className="mt-3 font-mono text-[10px] uppercase">Sandwich / On the table</figcaption></figure><figure><img src={nutellaImage} alt="Toast spread with Nutella and topped with banana slices on checkered paper" width={1440} height={1920} loading="lazy" className="aspect-[4/3] w-full border border-ink object-cover" /><figcaption className="mt-3 font-mono text-[10px] uppercase">Nutella &amp; banana / Sweet side</figcaption></figure></div></div></section>
+      <section className="px-5 py-20 md:px-10 md:py-28"><div className="mx-auto max-w-7xl"><Eyebrow>From the kitchen</Eyebrow><div className="grid gap-8 lg:grid-cols-2"><h2 className="font-display text-5xl uppercase leading-[0.9] sm:text-7xl">Coffee needs<br />something good<br />beside it.</h2><div className="border-l border-ink pl-6 font-mono text-sm uppercase leading-loose"><p>Breakfast sandwiches</p><p>Pastries / Concha</p><p>Avocado toast</p><p>Nutella & banana croissant</p><p>Banana and PB toast</p><p>Bagel sandwich</p></div></div><figure className="relative mt-12"><img src={breakfastImage} alt="Breakfast sandwiches, a ham and egg croissant and iced coffees on checkered paper" width="1440" height="1920" loading="lazy" className="relative aspect-[16/8] w-full object-cover" /><figcaption className="relative mt-6 font-mono text-[10px] uppercase">Breakfast / Pastries / Something good beside it</figcaption></figure><div className="mt-6 grid gap-6 sm:grid-cols-2"><figure><img src={clubSandwichImage} alt="Toasted sandwich with lettuce and tomato served on checkered paper" width={1440} height={1920} loading="lazy" className="aspect-[4/3] w-full border border-ink object-cover" /><figcaption className="mt-3 font-mono text-[10px] uppercase">Sandwich / On the table</figcaption></figure><figure><img src={nutellaImage} alt="Toast spread with Nutella and topped with banana slices on checkered paper" width={1440} height={1920} loading="lazy" className="aspect-[4/3] w-full border border-ink object-cover" /><figcaption className="mt-3 font-mono text-[10px] uppercase">Nutella &amp; banana / Sweet side</figcaption></figure></div></div></section>
 
       <section id="cafe" className="scroll-mt-[72px] bg-pine px-5 py-20 wood-grain md:px-10 md:py-28"><div className="mx-auto max-w-7xl"><div className="grid gap-10 lg:grid-cols-2"><div><Eyebrow>The space</Eyebrow><h2 className="font-display text-5xl uppercase leading-[0.9] sm:text-7xl">Come for coffee.<br />Stay a while.</h2></div><img src={counterWallImage} alt="Reclaimed timber counter and tables inside the café, framed photographs and flowers on the shelf" width={1920} height={1440} loading="lazy" className="aspect-[3/2] w-full border border-ink object-cover" /></div><div className="mt-12 grid border-y border-ink sm:grid-cols-3">{[["01", "SLOW DOWN"], ["02", "MEET HERE"], ["03", "TAKE YOUR TIME"]].map(([num, text]) => <div key={num} className="border-b border-ink p-6 last:border-0 sm:border-b-0 sm:border-r sm:last:border-r-0"><span className="font-mono text-xs">{num}</span><p className="mt-4 font-display text-2xl">{text}</p></div>)}</div></div></section>
 
