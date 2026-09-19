@@ -52,7 +52,6 @@ export const getGoogleReviews = createServerFn({ method: "GET" }).handler(async 
         authorAttribution?: { displayName?: string };
       }>;
     };
-  };
 
     const data: PlaceReviews = {
       rating: body.rating ?? null,
