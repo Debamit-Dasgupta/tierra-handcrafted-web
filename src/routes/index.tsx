@@ -5,20 +5,7 @@ import { Button } from "@/components/ui/button";
 import { getGoogleReviews } from "@/lib/reviews.functions";
 
 import cherriesImage from "@/assets/coffee-cherries.jpg";
-import interiorWideAsset from "@/assets/cafe-interior-wide.jpg.asset.json";
-import sandwichLatteAsset from "@/assets/cafe-sandwich-latte.jpg.asset.json";
-import counterAsset from "@/assets/cafe-counter.jpg.asset.json";
-import breakfastAsset from "@/assets/cafe-breakfast.jpg.asset.json";
-import latteHeartAsset from "@/assets/cafe-latte-heart.jpg.asset.json";
-import clubSandwichAsset from "@/assets/cafe-club-sandwich.jpg.asset.json";
-import storefrontAsset from "@/assets/cafe-storefront.jpg.asset.json";
-import nutellaAsset from "@/assets/cafe-nutella-banana.jpg.asset.json";
-import windowSignAsset from "@/assets/cafe-window-sign.webp.asset.json";
-import counterWallAsset from "@/assets/cafe-counter-wall.webp.asset.json";
-import stickerLatteAsset from "@/assets/cafe-iced-latte-sticker.png.asset.json";
-import sleeveLatteAsset from "@/assets/cafe-iced-latte-sleeve.webp.asset.json";
-import patioBreakfastAsset from "@/assets/cafe-patio-breakfast.jpg.asset.json";
-import nutellaCounterAsset from "@/assets/cafe-nutella-counter.jpg.asset.json";
+// Images live in public/images so they deploy with the site on any host.
 
 
 const interiorImage = interiorWideAsset.url;
