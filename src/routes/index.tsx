@@ -189,26 +189,35 @@ function Index() {
 
       <section className="border-y border-ink bg-sunflower px-5 py-16 md:px-10"><div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[auto_1fr] md:items-center"><div><span className="font-display text-8xl leading-none">{placeRating ?? "4.8"}</span><p className="font-mono text-xs font-bold">{(placeTotal ?? 220).toLocaleString("en-US")} REVIEWS</p></div><div><Eyebrow>Customers talk about</Eyebrow><div className="flex flex-wrap gap-x-5 gap-y-2 font-display text-2xl uppercase sm:text-4xl"><span>Delicious coffee</span><span>·</span><span>Warm atmosphere</span><span>·</span><span>Fresh food</span><span>·</span><span>Friendly service</span></div></div></div></section>
 
-      {googleReviews.length > 0 && (
-        <section id="reviews" className="scroll-mt-[72px] px-5 py-20 md:px-10 md:py-28">
-          <div className="mx-auto max-w-7xl">
-            <Eyebrow>From Google</Eyebrow>
-            <h2 className="font-display text-5xl uppercase leading-[0.9] sm:text-7xl">What people<br />are saying.</h2>
-            <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-              {googleReviews.map((review, index) => (
-                <blockquote key={`${review.author}-${index}`} className="flex flex-col justify-between border border-ink bg-plaster p-6">
-                  <p className="leading-relaxed">“{review.text.length > 280 ? `${review.text.slice(0, 280).trimEnd()}…` : review.text}”</p>
-                  <footer className="mt-6 border-t border-ink/30 pt-4 font-mono text-[10px] uppercase">
-                    <span className="font-bold">{review.author}</span>
-                    <span className="block text-ink/70">{review.rating} / 5 {review.relativeTime ? `· ${review.relativeTime}` : ""} · Google</span>
-                  </footer>
-                </blockquote>
-              ))}
+      <section id="reviews" className="scroll-mt-[72px] px-5 py-20 md:px-10 md:py-28">
+        <div className="mx-auto max-w-7xl">
+          <Eyebrow>From Google</Eyebrow>
+          <h2 className="font-display text-5xl uppercase leading-[0.9] sm:text-7xl">What people<br />are saying.</h2>
+          {googleReviews.length > 0 ? (
+            <>
+              <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                {googleReviews.map((review, index) => (
+                  <blockquote key={`${review.author}-${index}`} className="flex flex-col justify-between border border-ink bg-plaster p-6">
+                    <p className="leading-relaxed">“{review.text.length > 280 ? `${review.text.slice(0, 280).trimEnd()}…` : review.text}”</p>
+                    <footer className="mt-6 border-t border-ink/30 pt-4 font-mono text-[10px] uppercase">
+                      <span className="font-bold">{review.author}</span>
+                      <span className="block text-ink/70">{review.rating} / 5 {review.relativeTime ? `· ${review.relativeTime}` : ""} · Google</span>
+                    </footer>
+                  </blockquote>
+                ))}
+              </div>
+              <p className="mt-6 font-mono text-[10px] uppercase text-ink/70">Reviews from Google · updated automatically</p>
+            </>
+          ) : (
+            <div className="mt-12 border border-ink bg-plaster p-7 md:p-10">
+              <p className="font-display text-6xl leading-none sm:text-7xl">{placeRating ?? "4.8"}</p>
+              <p className="mt-2 font-mono text-xs font-bold uppercase">{(placeTotal ?? 220).toLocaleString("en-US")} reviews on Google</p>
+              <p className="mt-5 max-w-xl leading-relaxed">Customers talk about our delicious coffee, warm atmosphere, fresh food and friendly service.</p>
+              <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`De La Tierra Café ${address}`)}`} target="_blank" rel="noreferrer" className="mt-6 inline-block font-mono text-xs font-bold uppercase underline">Read the reviews on Google →</a>
             </div>
-            <p className="mt-6 font-mono text-[10px] uppercase text-ink/70">Reviews from Google · updated automatically</p>
-          </div>
-        </section>
-      )}
+          )}
+        </div>
+      </section>
 
       <section id="instagram" className="scroll-mt-[72px] border-y border-ink bg-ink px-5 py-20 text-plaster md:px-10 md:py-28">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
